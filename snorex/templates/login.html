@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for mess in get_flashed_messages() %}
+
+  {% if 'logged out' in mess %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{mess}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% else %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{mess}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endif %}
+
+{% endfor %}
+
+
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+  <div class="container-fluid py-1 col-md-3 col-md-offset-2 ">
+    <form method="POST">
+      {{form.hidden_tag()}}
+      <img class="mb-4" src="https://genesistrading.com/wp-content/themes/genesis/assets/images/genesis-logo-black.svg" alt="" width="144" height="114">
+      <h1 class="h5 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        {{form.email(class="form-control", placeholder="name@example.com")}}
+        {{form.email.label}}
+      </div>
+      <div class="form-floating">
+        {{form.password(class="form-control", placeholder="Password")}}
+        {{form.password.label}}
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      {{form.submit(class="w-100 btn btn-lg btn-primary")}}
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

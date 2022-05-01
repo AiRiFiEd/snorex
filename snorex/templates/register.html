@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+  <div class="container-fluid py-1 col-md-3 col-md-offset-2 ">
+    <form method="POST">
+      {{form.hidden_tag()}}
+      <img class="mb-4" src="https://genesistrading.com/wp-content/themes/genesis/assets/images/genesis-logo-black.svg" alt="" width="144" height="114">
+      <h1 class="h5 mb-3 fw-normal">Please register</h1>
+
+      <div class="form-floating">
+        {{form.email(class="form-control", placeholder="name@example.com")}}
+        {{form.email.label}}
+      </div>
+      <div class="form-floating">
+        {{form.email_confirmation(class="form-control", placeholder="name@example.com")}}
+        {{form.email_confirmation.label}}
+      </div>
+      <div class="form-floating">
+        {{form.username(class="form-control", placeholder="Username")}}
+        {{form.username.label}}
+      </div>
+      <div class="form-floating">
+        {{form.password(class="form-control", placeholder="Password")}}
+        {{form.password.label}}
+      </div>
+      <div class="form-floating">
+        {{form.password_confirmation(class="form-control", placeholder="Password")}}
+        {{form.password_confirmation.label}}
+      </div>
+
+      {{form.submit(class="w-100 btn btn-lg btn-primary")}}
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

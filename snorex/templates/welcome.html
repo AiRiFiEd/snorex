@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for mess in get_flashed_messages() %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{mess}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Derivatives Desk</h1>
+    <h3>Risk Management System</h3>
+    <p></p>
+    <p>Updates:</p>
+    <ul>
+      <li>version 0.0</li>
+        <ul>
+          <li>[New] Implement Login Page</li>
+          <li>[New] Implement Market Data Page</li>
+        </ul>
+    </ul>
+  </div>
+</div>
+{% endblock %}

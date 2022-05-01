@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="{{url_for('analytics.historical_price')}}">
+              <span data-feather="trending-up"></span>
+              Historical Price
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="activity"></span>
+              Historical Volatility
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Data Request</h4>
+      <form method="POST">
+        <div class="row g-3">
+          <div class="col-sm-3">
+            {{form.hidden_tag()}}
+            {{form.underlying.label(class="form-label")}}
+            {{form.underlying(class="form-control text-center")}}
+          </div>
+          <div class="col-sm-2">
+            {{form.resolution.label(class="form-label")}}
+            {{form.resolution(class="form-control text-center")}}
+          </div>
+          <div class="col-sm-1">
+            {{form.rolling_window_1.label(class="form-label")}}
+            {{form.rolling_window_1(class="form-control text-center")}}
+          </div>
+          <div class="col-sm-1">
+            {{form.rolling_window_2.label(class="form-label")}}
+            {{form.rolling_window_2(class="form-control text-center")}}
+          </div>
+          <div class="col-sm-1">
+            {{form.rolling_window_3.label(class="form-label")}}
+            {{form.rolling_window_3(class="form-control text-center")}}
+          </div>
+          <div class="col-sm-2">
+            {{form.start_date.label(class="form-label")}} <br>
+            {{form.start_date(class="form-control datepicker text-center")}}
+          </div>
+
+          <div class="col-sm-2">
+            {{form.end_date.label(class="form-label")}} <br>
+            {{form.end_date(class="form-control datepicker text-center")}}
+          </div>
+
+          <div class="col-12">
+            {{form.submit(class="btn btn-primary btn-lg")}}
+          </div>
+        </div>
+      </form>
+      {% if graph_json %}
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h4 class="mb-3">Overview</h4>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+              <button class="btn btn-sm btn-outline-secondary">Share</button>
+              <button class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div>
+
+        <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
+
+
+
+        <div id='chart' class='chart'”></div>
+
+        <div class="table-responsive">
+          {{table | safe}}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{graph_json | safe}};
+  Plotly.plot('chart',graphs,{});
+</script>
+
+<script>
+  feather.replace()
+</script>
+
+{% endblock %}
