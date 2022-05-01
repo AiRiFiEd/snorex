@@ -22,6 +22,7 @@ app = Flask(__name__)
 #                                             db_name=os.getenv('DATABASE_NAME'))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xlqnvydgbgpbao:1663b44a15c8d39a4b7b9ba3de4e15fe8b11134f7016ce3ec99c020e0a3b3231@ec2-34-192-210-139.compute-1.amazonaws.com:5432/d6osmmqphob640'
 
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = bool(os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS'))
 
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
