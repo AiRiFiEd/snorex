@@ -97,7 +97,6 @@ psutil==5.8.0
 psycopg2==2.8.6
 pycparser==2.21
 pydocstyle==6.1.1
-pyflakes==2.3.0
 Pygments==2.10.0
 pylint==2.7.4
 pyls-black==0.4.6
