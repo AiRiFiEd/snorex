@@ -95,7 +95,6 @@ pluggy==1.0.0
 prompt-toolkit==3.0.20
 psutil==5.8.0
 psycopg2==2.8.6
-ptyprocess==0.7.0
 pycodestyles
 pycparser==2.21
 pydocstyle==6.1.1
