@@ -34,6 +34,9 @@ Jinja2==2.10
 
 
 Mako==1.0.7
+
+MarkupSafe==1.0
+
 oauth2==1.9.0.post1
 python-dateutil==2.7.2
 
