@@ -58,3 +58,4 @@ Werkzeug==2.0
 wincertstore==0.2
 
 WTForms==2.1
+numpy==1.22.3
