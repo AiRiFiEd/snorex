@@ -53,7 +53,7 @@ urllib3==1.22
 
 URLObject==2.4.3
 
-Werkzeug==0.14.1
+Werkzeug==0.16.1
 
 wincertstore==0.2
 
