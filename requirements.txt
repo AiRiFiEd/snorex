@@ -54,8 +54,7 @@ urllib3==1.22
 
 URLObject==2.4.3
 
-Werkzeug==0.16.1
-
+Werkzeug==2.0
 wincertstore==0.2
 
 WTForms==2.1
