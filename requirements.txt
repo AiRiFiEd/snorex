@@ -46,9 +46,9 @@ requests-oauthlib==0.8.0
 
 six==1.11.0
 
-SQLAlchemy==1.2.6
+SQLAlchemy==1.4.36
 
-SQLAlchemy-Utils==0.33.2
+SQLAlchemy-Utils==0.38.2
 
 urllib3==1.22
 
