@@ -50,7 +50,7 @@ SQLAlchemy==1.4.36
 
 SQLAlchemy-Utils==0.38.2
 
-urllib3==1.22
+urllib3==1.26.9
 
 URLObject==2.4.3
 
