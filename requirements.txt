@@ -1,3 +1,4 @@
+setuptools==45
 alembic==0.9.9
 blinker==1.4
 chardet==3.0.4
@@ -32,4 +33,3 @@ URLObject==2.4.3
 Werkzeug==0.14.1
 wincertstore==0.2
 WTForms==2.1
-setuptools==45
