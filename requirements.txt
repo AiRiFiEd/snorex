@@ -61,3 +61,4 @@ WTForms==3.0.1
 numpy==1.22.3
 pandas==1.4.2
 plotly==5.7.0
+flask-bcrypt==1.0.1
